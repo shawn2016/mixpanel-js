@@ -3271,7 +3271,7 @@
      * Module-level globals
      */
     var DEFAULT_CONFIG = {
-        'api_host':                          'https://api.mixpanel.com',
+        'api_host':                          'http://localhost:8000',
         'app_host':                          'https://mixpanel.com',
         'autotrack':                         true,
         'cdn':                               'https://cdn.mxpnl.com',
@@ -4406,13 +4406,13 @@
     });
 
     /**
-     * Add a new group for this user.
+     * 111s试试好好说话
      *
-     * ### Usage:
+     * ### 用法:
      *
      *      mixpanel.add_group('company', 'mixpanel')
      *
-     * @param {String} group_key Group key
+     * @param {String} group_key 组ID
      * @param {*} group_id A valid Mixpanel property type
      * @param {Function} [callback] If provided, the callback will be called after tracking the event.
      */

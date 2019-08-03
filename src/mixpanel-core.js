@@ -1,5 +1,5 @@
 /* eslint camelcase: "off" */
-import Config from './config';
+import { Config,DEFAULT_CONFIG } from './config';
 import { _, console, userAgent, window, document } from './utils';
 import { evaluateSelector } from './property-filters';
 import { autotrack } from './autotrack';
@@ -43,7 +43,7 @@ import {
 // ==/ClosureCompiler==
 
 /*
-SIMPLE STYLE GUIDE:
+简单的风格指南:
 
 this.x === public function
 this._x === internal - only use within this file
@@ -56,9 +56,9 @@ var init_type;       // MODULE or SNIPPET loader
 var mixpanel_master; // main mixpanel instance / object
 var INIT_MODULE  = 0;
 var INIT_SNIPPET = 1;
-
+console.log('----------------------------------')
 /*
- * Constants
+ * 常量
  */
 /** @const */   var PRIMARY_INSTANCE_NAME     = 'mixpanel';
 /** @const */   var SET_QUEUE_KEY             = '__mps';
@@ -98,43 +98,6 @@ var USE_XHR = (window.XMLHttpRequest && 'withCredentials' in new XMLHttpRequest(
     // with defer won't block window.onload; ENQUEUE_REQUESTS
     // should only be true for Opera<12
 var ENQUEUE_REQUESTS = !USE_XHR && (userAgent.indexOf('MSIE') === -1) && (userAgent.indexOf('Mozilla') === -1);
-
-/*
- * Module-level globals
- */
-var DEFAULT_CONFIG = {
-    'api_host':                          'https://api.mixpanel.com',
-    'app_host':                          'https://mixpanel.com',
-    'autotrack':                         true,
-    'cdn':                               'https://cdn.mxpnl.com',
-    'cross_subdomain_cookie':            true,
-    'persistence':                       'cookie',
-    'persistence_name':                  '',
-    'cookie_name':                       '',
-    'loaded':                            function() {},
-    'store_google':                      true,
-    'save_referrer':                     true,
-    'test':                              false,
-    'verbose':                           false,
-    'img':                               false,
-    'track_pageview':                    true,
-    'debug':                             false,
-    'track_links_timeout':               300,
-    'cookie_expiration':                 365,
-    'upgrade':                           false,
-    'disable_persistence':               false,
-    'disable_cookie':                    false,
-    'secure_cookie':                     false,
-    'ip':                                true,
-    'opt_out_tracking_by_default':       false,
-    'opt_out_persistence_by_default':    false,
-    'opt_out_tracking_persistence_type': 'localStorage',
-    'opt_out_tracking_cookie_prefix':    null,
-    'property_blacklist':                [],
-    'xhr_headers':                       {}, // { header: value, header2: value }
-    'inapp_protocol':                    '//',
-    'inapp_link_new_window':             false
-};
 
 var DOM_LOADED = false;
 

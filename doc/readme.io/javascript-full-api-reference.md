@@ -9,19 +9,14 @@ title: JavaScript Full API Reference
 
 <hr>
 ## mixpanel.add_group
-Add a new group for this user.
+111s试试好好说话
 
 
-### Usage:
-
-```javascript
- mixpanel.add_group('company', 'mixpanel')
-```
 
 
 | Argument | Type | Description |
 | ------------- | ------------- | ----- |
-| **group_key** | <span class="mp-arg-type">String</span></br></span><span class="mp-arg-required">required</span> | Group key |
+| **group_key** | <span class="mp-arg-type">String</span></br></span><span class="mp-arg-required">required</span> | 组ID |
 | **group_id** | <span class="mp-arg-type">any</span></br></span><span class="mp-arg-required">required</span> | A valid Mixpanel property type |
 | **callback** | <span class="mp-arg-type">Function</span></br></span><span class="mp-arg-optional">optional</span> | If provided, the callback will be called after tracking the event. |
 
@@ -116,7 +111,7 @@ mixpanel.init('YOUR PROJECT TOKEN', {
 Look up reference to a Mixpanel group
 
 
-### Usage:
+### 用法:
 
 ```javascript
   mixpanel.get_group(group_key, group_id)
@@ -268,7 +263,7 @@ Opt the user out of data tracking and cookies/localstorage for this Mixpanel ins
 push() keeps the standard async-array-push  behavior around after the lib is loaded.  This is only useful for external integrations that  do not wish to rely on our convenience methods  (created in the snippet).
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.push(['register', { a: 'b' }]);
@@ -285,7 +280,7 @@ mixpanel.push(['register', { a: 'b' }]);
 Register a set of super properties, which are included with all  events. This will overwrite previous super property values.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // register 'Gender' as a super property
@@ -310,7 +305,7 @@ mixpanel.register({
 Register a set of super properties only once. This will not  overwrite previous super property values, unlike register().
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // register a super property for the first time only
@@ -336,7 +331,7 @@ If default_value is specified, current super properties  with that value will be
 Remove a group from this user.
 
 
-### Usage:
+### 用法:
 
 ```javascript
  mixpanel.remove_group('company', 'mixpanel')
@@ -455,7 +450,7 @@ The default config is:
 Register the current user into one/many groups.
 
 
-### Usage:
+### 用法:
 
 ```javascript
  mixpanel.set_group('company', ['mixpanel', 'google']) // an array of IDs
@@ -476,7 +471,7 @@ Register the current user into one/many groups.
 Time an event by including the time between this call and a  later 'track' call for the same event in the properties sent  with the event.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // time an event named 'Registered'
@@ -498,7 +493,7 @@ When called for a particular event name, the next track call for that event  nam
 Track an event. This is the most important and  frequently used Mixpanel function.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // track an event named 'Registered'
@@ -521,7 +516,7 @@ To track link clicks or form submissions, see track_links() or track_forms().
 Track form submissions. Selector must be a valid query.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // track submission for form id 'register'
@@ -547,7 +542,7 @@ If you pass a function in as the properties argument, the  function will receive
 Track clicks on a set of document elements. Selector must be a  valid query. Elements must exist on the page at the time track_links is called.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // track click for link id #nav
@@ -573,7 +568,7 @@ If you pass a function in as the properties argument, the  function will receive
 Track an event with specific groups.
 
 
-### Usage:
+### 用法:
 
 ```javascript
  mixpanel.track_with_groups('purchase', {'product': 'iphone'}, {'University': ['UCB', 'UCLA']})
@@ -609,7 +604,7 @@ Delete a super property stored with the current user.
 Append a value to a list-valued people analytics property.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // append a value to a list, creating it if needed
@@ -636,7 +631,7 @@ mixpanel.people.append({
 Permanently clear all revenue report transactions from the  current user's people analytics profile.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.clear_charges();
@@ -653,7 +648,7 @@ mixpanel.people.clear_charges();
 Permanently deletes the current people analytics profile from  Mixpanel (using the current distinct_id).
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // remove the all data you have stored about the current user
@@ -667,7 +662,7 @@ mixpanel.people.delete_user();
 Increment/decrement numeric people analytics properties.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.increment('page_views', 1);
@@ -700,7 +695,7 @@ mixpanel.people.increment({
 Remove a value from a list-valued people analytics property.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.remove('School', 'UCB');
@@ -719,7 +714,7 @@ mixpanel.people.remove('School', 'UCB');
 Set properties on a user record.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.set('gender', 'm');
@@ -746,7 +741,7 @@ mixpanel.people.set({
 Set properties on a user record, only if they do not yet exist.  This will not overwrite previous people property values, unlike  people.set().
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.set_once('First Login Date', new Date());
@@ -773,7 +768,7 @@ mixpanel.people.set_once({
 Record that you have charged the current user a certain amount  of money. Charges recorded with track_charge() will appear in the  Mixpanel revenue report.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // charge a user $50
@@ -798,7 +793,7 @@ mixpanel.people.track_charge(30.50, {
 Merge a given list with a list-valued people analytics property,  excluding duplicate values.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // merge a value to a list, creating it if needed
@@ -831,7 +826,7 @@ mixpanel.people.union({
 Unset properties on a user record (permanently removes the properties and their values from a profile).
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.people.unset('gender');
@@ -856,7 +851,7 @@ mixpanel.people.unset(['gender', 'Company']);
 Remove a property from a group. The value will be ignored if doesn't exist.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.get_group('company', 'mixpanel').remove('Location', 'London');
@@ -875,7 +870,7 @@ mixpanel.get_group('company', 'mixpanel').remove('Location', 'London');
 Set properties on a group.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.get_group('company', 'mixpanel').set('Location', '405 Howard');
@@ -901,7 +896,7 @@ mixpanel.get_group('company', 'mixpanel').set({
 Set properties on a group, only if they do not yet exist.  This will not overwrite previous group property values, unlike  group.set().
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.get_group('company', 'mixpanel').set_once('Location', '405 Howard');
@@ -927,7 +922,7 @@ mixpanel.get_group('company', 'mixpanel').set_once({
 Merge a given list with a list-valued group property, excluding duplicate values.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 // merge a value to a list, creating it if needed
@@ -947,7 +942,7 @@ mixpanel.get_group('company', 'mixpanel').union('Location', ['San Francisco', 'L
 Unset properties on a group permanently.
 
 
-### Usage:
+### 用法:
 
 ```javascript
 mixpanel.get_group('company', 'mixpanel').unset('Founded');

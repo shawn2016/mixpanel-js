@@ -11,7 +11,7 @@ title: JavaScript Full API Reference
 ## <%= item.name %>
 <%= item.description %>
 <% if (item.usage)  { %>
-### Usage:
+### 用法:
 <%= item.usage %><% } %>
 <% if (item.notes)  { %>
 ### Notes:

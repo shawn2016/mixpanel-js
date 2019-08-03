@@ -3337,7 +3337,7 @@
 	     * Module-level globals
 	     */
 	    var DEFAULT_CONFIG = {
-	        'api_host':                          'https://api.mixpanel.com',
+	        'api_host':                          'http://localhost:8000',
 	        'app_host':                          'https://mixpanel.com',
 	        'autotrack':                         true,
 	        'cdn':                               'https://cdn.mxpnl.com',
